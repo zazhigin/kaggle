@@ -22,7 +22,7 @@ X = np.array(train.values[0::, 1::])
 y = np.array(train.values[0::, 0])
 
 # Random forest classifier
-clf = RandomForestClassifier(n_estimators=100)
+clf = RandomForestClassifier(n_estimators=100, random_state=241)
 clf.fit(X, y)
 
 # Load testing set
