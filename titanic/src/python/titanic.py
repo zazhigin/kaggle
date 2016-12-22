@@ -66,10 +66,10 @@ test.loc[ (test.Fare.isnull()) & (test.Pclass == 3 ), 'Fare'] = median_fare_pcla
 test = test.drop(['Name', 'Sex', 'Ticket', 'Cabin', 'Embarked', 'PassengerId'], axis=1)
 
 # Predict by the model
-predict = clf.predict(test).astype(int)
+output = clf.predict(test).astype(int)
 
 f = open("titanic.csv", "wb")
 writer = csv.writer(f)
 writer.writerow(["PassengerId","Survived"])
-writer.writerows(zip(ids, predict))
+writer.writerows(zip(ids, output))
 f.close()
